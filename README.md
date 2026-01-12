@@ -101,6 +101,7 @@ Each chunk has a level-of-detail value that controls how much geometric detail i
 | LOD 0 | LOD 1 | LOD 2 |
 | --- | --- | --- |
 | ![Cover](images/lod0.png) | ![Cover](images/lod1.png) | ![Cover](images/lod2.png) |
+
 Implementation notes:
 
 LOD selection happens in `assignment_package/src/scene/terrain.cpp` inside `Terrain::draw`. Distance thresholds determine the LOD level, and the chunk updates itself via `Chunk::setLevelOfDetail`. The chunk’s meshing logic uses the LOD to adjust sampling density when building VBO data.
