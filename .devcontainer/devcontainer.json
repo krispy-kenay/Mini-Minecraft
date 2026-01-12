@@ -1,0 +1,24 @@
+{
+  "name": "Mini-Minecraft (Qt)",
+  "image": "mcr.microsoft.com/devcontainers/cpp:1-ubuntu-22.04",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {}
+  },
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y qtbase5-dev qtbase5-dev-tools qtmultimedia5-dev qttools5-dev qttools5-dev-tools qtwayland5 libgl1-mesa-dev libglu1-mesa-dev mesa-common-dev && sudo apt-get clean",
+  "remoteUser": "vscode",
+  "containerEnv": {
+    "DISPLAY": "${localEnv:DISPLAY}",
+    "WAYLAND_DISPLAY": "${localEnv:WAYLAND_DISPLAY}",
+    "XDG_RUNTIME_DIR": "/run/user/${localEnv:UID}",
+    "XAUTHORITY": "${localEnv:XAUTHORITY}"
+  },
+  "mounts": [
+    "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind",
+    "source=${localEnv:XAUTHORITY},target=/tmp/.Xauthority,type=bind,readonly",
+    "source=/run/user/${localEnv:UID},target=/run/user/${localEnv:UID},type=bind"
+  ],
+  "runArgs": [
+    "--device=/dev/dri",
+    "--security-opt=label=disable"
+  ]
+}

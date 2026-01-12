@@ -1,0 +1,34 @@
+# Build output
+/build/
+/build-*/
+/assignment_package/build/
+/assignment_package/**/build/
+
+# Qt / qmake artifacts
+*.pro.user*
+*.qmake.stash
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+
+# Compiled objects / binaries
+*.o
+*.obj
+*.lo
+*.la
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+
+# Crash dumps
+core
+core.*
+
+# OS / IDE noise
+.DS_Store
+.vscode/
+.idea/
+*.swp

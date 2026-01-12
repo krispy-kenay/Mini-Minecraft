@@ -1,0 +1,25 @@
+# Local build output
+/build/
+/build-*/
+
+# Qt / qmake artifacts
+*.pro.user*
+*.qmake.stash
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+
+# Compiled objects / binaries
+*.o
+*.obj
+*.lo
+*.la
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+
+# OS noise
+.DS_Store
